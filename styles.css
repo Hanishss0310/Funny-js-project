@@ -1,0 +1,110 @@
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    animation: backgroundAnimation 10s infinite;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    animation: popIn 0.5s ease-in-out;
+}
+
+h1 {
+    color: #ff69b4;
+    margin-bottom: 20px;
+    animation: bounceText 2s infinite;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#yesBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#noBtn {
+    background-color: #f44336;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+#messageContainer, #finalMessageContainer {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fffbe6;
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    display: none;
+    animation: fadeInMessage 1s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes backgroundAnimation {
+    0% {background-color: #f2f2f2;}
+    50% {background-color: #ffe4e1;}
+    100% {background-color: #f2f2f2;}
+}
+
+@keyframes bounceText {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeInMessage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
